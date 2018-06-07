@@ -53,14 +53,14 @@ input {
   flex-basis: 75%;
 }
 #header-title {
-  width:70%;
+  width:100%;
   padding-top:10px;
   text-align:center;
   color:#fff;
 }
 #header{
   display:flex;
-  margin-top:25px;
+  margin-top:2%;
 }
 #header button {
   padding: 0px 15px;

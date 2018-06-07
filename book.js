@@ -189,9 +189,8 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               }
               return style;
             }
-            var bedInRoom = function(bedStyle, num) {
+            var roomWithSofa = function(num){
               var sofa;
-              var noRollaway
               var roomWithSofa = ['1134','1140','1160', '1234', '1240', '1260', '2215', '2302', '2315', '2410', '2420', '3220', 
               '3301', '3320', '4100', '4101', '4102', '4103', '4104','4105', '4106', '4107', '4108', '4111', '4112', '4113', 
               '4114', '4117', '4118', '4119', '4120', '4121', '4135', '4229', '4235', '4241', '4300', '4329', '5102', '5106', 
@@ -199,12 +198,20 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               '5231', '6104', '6114', '6204', '6304','7104','7106','7114','7118','7120','7132','7136','7138','7140','7142',
               '7144','7146','7150','7156','7160','7162','7166','7170','7206','7212','7214','7218','7220','7222','7230','7232',
               '7234','7242','7244','7246','7248','7256','7260','7262','7264','7266','7268','7270','7362','7368','7372'];
-              var smallCottage = ['5100','5104','5108','5112','5116','5120','5124','5128','5132','5136','5137','5139','5140','5141','5142','5144','5145'];
               for (var z = 0; z < roomWithSofa.length; z++) {
                 if (roomWithSofa[z] === num) {
                   sofa = roomWithSofa[z];
+                  $("#sofa").prop("checked", true);
                 }
               }
+              return sofa;
+            }
+            var bedInRoom = function(bedStyle, num) {
+             
+              var noRollaway
+              
+              var smallCottage = ['5100','5104','5108','5112','5116','5120','5124','5128','5132','5136','5137','5139','5140','5141','5142','5144','5145'];
+              
               for (var y = 0; y < smallCottage.length; y++) {
                 if (smallCottage[y] === num) {
                   noRollaway = smallCottage[y];
@@ -214,7 +221,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 bedStyle = "King";
                  //end for loop
                 if (sofa === num) {
-                  $("#sofa").prop("checked", true);
+                  
                 }
                 else if ((num.substring(0,2) === "52" && sofa != num) || (num.substring(0, 2) === "72" && sofa != num)) {
                   $("#rollaway").prop("checked", false);
@@ -244,6 +251,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               }
               return bedStyle;
             }
+            //function for connecting room
             var connectRoom = function(num) {
               if (num === "N") {
                 num = "none";
@@ -293,7 +301,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               var view;
               var size;
               var connect;
-              //fetch text file
+              //fetch text file to be read
               $.get('rooms2.txt', function(data) {
                 //split text file on ;
                 var lines = data.split('\n');
@@ -316,9 +324,12 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 $('#wing').val(whichBuilding(wing));
                 $('#room_style').val(roomType + "-" + roomStyle(roomType, rNum));
                 $('#room_bed').val(bedInRoom(roomType, rNum));
+                $('#sofa').val(roomWithSofa(rNum));
+                // separate bedroom
+                // accessible
                 $('#room_bath').val(bath);
                 $('#room_view').val(view);
-                $('#room_size').val(size + " sq ft");
+                $('#room_size').val(size + " sqft");
                 $('#room_connect').val(connectRoom(connect));
                 accessibleRoom(roomType, rNum);
                 elevatorAccess(rNum);
