@@ -745,8 +745,8 @@
 7269, Q2SRO,shower,trees/Links golf course/Camelback Mtn,407.1, 7268
 7270, K1VRP1, Roman tub & separate shower,trees/Links golf course/Camelback Mtn,1226 (Living:720/Bedrm:506), 7271
 7271, Q2SRO,shower,trees/Links golf course/Camelback Mtn,407.1, 7270
-7272,
-7273,
+7272, K1VRP1, Roman tub & separate shower, trees/Links golf course/Camelback Mtn,1226 (Living:720/Bedrm:506),7273
+7273, K1SRO, shower,trees/Links golf course/Camelback Mtn,407.1,7272
 7362, K1VRP1, Roman tub & separate shower,trees/Links golf course/Camelback Mtn,1226 (Living:720/Bedrm:506), 7363
 7363, Q2SRO,shower,trees/Links golf course/Camelback Mtn,407.1, 7362
 7364,
