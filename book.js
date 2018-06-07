@@ -1,6 +1,8 @@
+var myTime = new Date();
+document.getElementById('year').innerHTML = myTime.getFullYear();
+  
   $(document).ready(function() {
-        var myTime = new Date();
-        document.getElementById('year').innerHTML = myTime.getFullYear();
+        
         //function that tells where is the room - which building
         var $label;
         var whichBuilding = function(num) {
