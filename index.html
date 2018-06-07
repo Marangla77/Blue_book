@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arizona Biltmore Blue Book</title>
+    <link rel="stylesheet" href="book_style.css">
+</head>
+<body >
+   <div class="container">
+     <dix id="inner-container">
+       <!-- <div id="image">
+         <img src="Resource/AZ_logo.jpg" alt="Biltmore block">
+       </div> -->
+       <div id="baner">
+         <h1 id="header-title">Rooms features</h1>
+             <div id="header">
+              <input type="text" id="room" value="type Room number">
+             <button id="our-button">Search Room</button>
+             </div>
+        </div>
+     </dix>
+       <div class="main-container">
+           <form>
+               <ul id="main-form">
+                   <li>
+                      <label>Building</label>
+                      <input type="text" id="wing"  disabled>
+                   </li>
+                   <li>
+                       <label>Cathegory</label>
+                       <input type="text" id="room_style"  disabled>
+                   </li>
+                   <li>
+                       <label>Bed Type</label>
+                       <input type="text" id="room_bed"  disabled>
+                   </li>
+                    <li> <label>Bathroom</label>
+                         <input type="text" id="room_bath"  disabled>
+                    </li>
+                    <li><label>Room View</label>
+                        <input type="text" id="room_view"  disabled></li>
+                    <li><label>Room Size</label>
+                        <input type="text" id="room_size"  disabled></li>
+               </ul>
+               <ul id="sidebar">
+                 <li>
+                    <input type="checkbox" id="access" disabled>
+                    <label for="access">Accessible</label>
+                </li>
+                   <li>
+                      <input type="checkbox" id="rollaway" disabled>
+                      <label for="rollaway">Allow Rollaway</label>
+                   </li>
+                   <li><input type="checkbox" id="sofa" disabled>
+                       <label for="sofa">Sleeper Sofa</label>
+                    </li>
+                   <li>
+                    <input type="checkbox" id="patio" disabled>
+                    <label for="patio">Patio</label>
+                    </li>
+                  <li>
+                      <input type="checkbox" id="balcony" disabled>
+                      <label for="balcony">balcony</label>
+                  </li>
+                   <li>
+                      <input type="checkbox" id="fire" disabled>
+                      <label for="fire">Fire pit</label>
+                  </li>
+               </ul>
+           </form>
+           <div id="connect">
+             <label>Connecting with</label>
+             <input type="text" id="room_connect"  disabled>
+           </div>
+           <img id="image">
+       </div> <!-- end main-container -->
+       <footer><p>&copy; <span id='year'></span> Martyna Rangl . For Arizona Biltmore Waldorf Astoria Resort &#38 Spa use only</p><footer>
+   </div>
+
+   <script>
+   window.$ = window.jQuery = require('./js/jquery-3.2.1.min.js');
+   </script>
+   <script src="book.js"></script>
+</body>
+</html>
