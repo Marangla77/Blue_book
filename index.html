@@ -21,7 +21,7 @@
          <h1 id="header-title">Room features</h1>
              <div id="header">
               <input type="text" id="room" value="type Room number">
-             <button id="our-button">Search Room</button>
+             <button id="our-button">Enter</button>
              </div>
         </div>
      </dix>
@@ -43,10 +43,12 @@
                     <li> <label>Bathroom</label>
                          <input type="text" id="room_bath"  disabled>
                     </li>
-                    <li><label>Room View</label>
-                        <input type="text" id="room_view"  disabled></li>
                     <li><label>Room Size</label>
                         <input type="text" id="room_size"  disabled></li>
+                    <li><label>Connector</label>
+                        <input type="text" id="room_connect"  disabled></li>
+                    <li><label>Room View</label>
+                            <textarea id="room_view"  disabled></textarea></li>
                </ul>
                <ul id="sidebar">
                  <li>
@@ -78,10 +80,7 @@
                   </li>
                </ul>
            </form>
-           <div id="connect">
-             <label>Connecting with</label>
-             <input type="text" id="room_connect"  disabled>
-           </div>
+           
            <img id="image">
        </div> <!-- end main-container -->
        <footer><p>&copy; <span id='year'></span> Martyna Rangl.</p><footer>

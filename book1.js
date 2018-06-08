@@ -149,6 +149,8 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 style = "Signature/Presidential Suite";
               } else if (style === "K1VRP1" || style === "Q2VRP1") {
                 style = "One Bedroom Villa Suite";
+                $("#separate").prop("checked", true);
+                $("#fire").prop("checked", true);
                 if (num.substring(1, 2) === "1") {
                   $("#patio").prop("checked", true);
                 } else {
@@ -288,13 +290,13 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               var size;
               var connect;
               //fetch text file to be read
-              $.get('rooms2.txt', function(data) {
+              $.get('rooms.txt', function(data) {
                 //split text file on ;
                 var lines = data.split('\n');
                 //iterate over lines of file and create a option element
                 for (var i = 0; i < lines.length - 1; i++) {
                   var single = lines[i];
-                  var item = single.split(',');
+                  var item = single.split(';');
 
                   if (item[0] === roomNumber) {
                     rNum = item[0].trim();
@@ -317,7 +319,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 // accessible
                 $('#room_bath').val(bath);
                 $('#room_view').val(view);
-                $('#room_size').val(size + " sqft");
+                $('#room_size').val(size);
                 $('#room_connect').val(connectRoom(connect));
                 accessibleRoom(roomType, rNum);
                 elevatorAccess(rNum);

@@ -5,10 +5,13 @@
   border: none;
   /*outline:1px solid red;*/
 }
+:root{
+  --theme-color: #4286f4;
+}
 
 body {
   font: normal 16px/1.1 "Verdana", "Arial", sans-serif;
-  background: #2aa5e2;
+  background: var(--theme-color);
   color:#000;
 
 }
@@ -64,16 +67,16 @@ input {
 }
 #header button {
   padding: 0px 15px;
-  background-color: #377;
-  background: #333;
+  background: #000;
   color: #f2f2f2;
-  box-shadow: 3px 3px 3px black;
+  box-shadow: 5px 5px 5px rgb(34, 39, 48);
 }
 
 button:active {
-  background: #555;
-  box-shadow: 2px 2px 2px #000;
-  transform: translateY(2px);
+  transform: translateY(4px);
+  background: #000;
+  box-shadow: 3px 3px 3px rgb(34, 39, 48);
+  outline:none;
 }
 
 #header input, #header button {
@@ -119,7 +122,7 @@ form {
   text-align: right;
 }
 
-#main-form li input {
+#main-form li input, #main-form li textarea {
   flex-basis: 72%;
   font-size: 15px;
   text-align: center;
@@ -156,21 +159,6 @@ padding: 4px;
   font-weight: 600;
   border:1px solid #fff;
   box-shadow: 5px 5px 5px rgba(225,225,225,0.23);
-}
-#connect {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding-top:20px;
-}
-
-#connect label, #connect input {
-  padding: 10px;
-  font-size: 16px;
-}
-
-#connect input {
-  text-align: center;
 }
 
 footer p {
