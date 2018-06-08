@@ -78,25 +78,32 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
             }
             //function for suite with balcony
             var balconySuite = function(num){
-                var suiteWithBalcony = [2302,2410,2420,3220,3301,3320,4229,4235,4241,4329,6204,6214,6304,6314]; 
+                var suiteWithBalcony = [1234,2302,2410,2420,3220,3301,3320,4229,4235,4241,4300,4329,6204,6214,6304,6314]; 
                 for(var i = 0; i< suiteWithBalcony.length; i++){
                 if (parseInt(num) === suiteWithBalcony[i]) {
                    $("#balcony").prop("checked", true);
+                   if((num.substring(0,1) === "2" || num.substring(0,1) === "3") && (num !== "2302" && num !== "3301") ){
+                    $("label[for='balcony']").text("Shared balcony");   
+                    }
+                    if(num.substring(0,1) === "6"){
+                        $("label[for='balcony']").text("\'French\' balcony"); 
+                  }
                  }
-                }
-                return patio;
-            }
+                }//end of for loop
+            }//end of balconysuite func
+
              //function for suite with patio
              var patioSuite = function(num){
-                var suiteWithBalcony = [2302,2410,2420,3220,3301,3320,4229,4235,4241,4329,6204,6214,6304,6314]; 
-                for(var i = 0; i< suiteWithBalcony.length; i++){
-                if (parseInt(num) === suiteWithBalcony[i]) {
-                   $("#balcony").prop("checked", true);
+                var suiteWithPatio = [1134,4100,4135,6104,6114];
+                for(var i = 0; i< suiteWithPatio.length; i++){
+                if (parseInt(num) === suiteWithPatio[i]) {
+                   $("#patio").prop("checked", true);
+                   if(num.substring(0,1) === "6"){
+                    $("label[for='patio']").text("Shared patio"); 
                  }
                 }
-                return patio;
-            }
-            var suiteWithPatio = [4100,4135,6104,6114];
+              }//end of for loop
+            }//end of patioSuite func
               var classicWithBalcony = [1308,1310,1312,1314,1316,1408,1410,1412,1414,1416];
             //function that will tell the room type
             var roomStyle = function(style, num) {
@@ -140,26 +147,12 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 style = "Grand Suite";
               } else if (style === "K1ZRP1") {
                 style = "Signature/Presidential Suite";
-                if (parseInt(num) === 1234 || parseInt(num) === 4300) {
-                   $("#balcony").prop("checked", true);
-                   if(parseInt(num) === 4300){
-                     $("#fire").prop("checked", true);
-                     $("label[for='fire']").text("Wet bar");
-                   }
-                 }
-                else if(parseInt(num) === 1134){
-                  $("#patio").prop("checked", true);
-                }
               } else if (style === "K1VRP1" || style === "Q2VRP1") {
-                $("#fire").prop("checked", true);
-                $("label[for='fire']").text("Gas Fireplace");
-                $("#access").prop("checked", true);
-                $("label[for='access']").text("kitchen");
+                style = "One Bedroom Villa Suite";
                 if (num.substring(1, 2) === "1") {
                   $("#patio").prop("checked", true);
-                  style = "1 Bedroom Villa Suite";
+                  
                 } else {
-                  style = "1 Bedroom Villa Suite";
                   $("#balcony").prop("checked", true);
                 }
               } else if (style === "K1ERV" || style === "K1ERD" || style === "Q2ERE") {
@@ -310,6 +303,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 $('#room_bed').val(bedInRoom(roomType, rNum));
                 $('#sofa').val(roomWithSofa(rNum));
                 $("#balcony").val(balconySuite(rNum));
+                $("#patio").val(patioSuite(rNum));
                 // separate bedroom
                 // accessible
                 $('#room_bath').val(bath);

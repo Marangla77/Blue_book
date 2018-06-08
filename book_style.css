@@ -3,7 +3,7 @@
   padding: 0;
   text-transform: uppercase;
   border: none;
-  outline:1px solid red;
+  /*outline:1px solid red;*/
 }
 
 body {
@@ -140,25 +140,17 @@ form {
   padding: 10px 0;
   margin: 9px 0;
   width:auto;
+  text-align: center;
 }
 
 #sidebar li input {
-  -ms-transform: scale(1.5);
-  /* IE */
-  -moz-transform: scale(1.5);
-  /* FF */
-  -webkit-transform: scale(1.5);
-  /* Safari and Chrome */
-  -o-transform: scale(1.5);
-  /* Opera */
-  margin: 5px;
-  width: 5%;
+  display:none;
 }
 #sidebar li input[type="checkbox"]:checked + label{
-  color:#071088;
+  color:#fff;
   font-weight: 600;
+  border:1px solid #fff;
 }
-
 #connect {
   display: flex;
   justify-content: center;
