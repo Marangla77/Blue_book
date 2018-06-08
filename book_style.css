@@ -137,19 +137,25 @@ form {
 }
 
 #sidebar li {
-  padding: 10px 0;
-  margin: 9px 0;
-  width:auto;
+  display:flex;
   text-align: center;
+  padding: 10px 0;
+  margin: 4px 0;
+  width:auto;
 }
 
 #sidebar li input {
   display:none;
 }
+#sidebar li label{
+flex-basis: 100%;
+padding: 4px;
+}
 #sidebar li input[type="checkbox"]:checked + label{
   color:#fff;
   font-weight: 600;
   border:1px solid #fff;
+  box-shadow: 5px 5px 5px rgba(225,225,225,0.23);
 }
 #connect {
   display: flex;

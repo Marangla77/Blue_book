@@ -151,7 +151,6 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 style = "One Bedroom Villa Suite";
                 if (num.substring(1, 2) === "1") {
                   $("#patio").prop("checked", true);
-                  
                 } else {
                   $("#balcony").prop("checked", true);
                 }
@@ -179,6 +178,16 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               }
               return style;
             }
+            //function for separate bedroom
+            var separateSuite = function(num){
+                var separateBed = [1134,1234,2302,2420,3301,3320,4135,4229,4235,4300,4329];
+                for(var i = 0; i< separateBed.length; i++){
+                    if (parseInt(num) === separateBed[i]) {
+                        $("#separate").prop("checked", true);
+                    }
+                }//end of for loop
+            }//end of separateSuite func
+            //function for room with sofa
             var roomWithSofa = function(num){
               var sofa;
               var roomWithSofa = ['1134','1140','1160', '1234', '1240', '1260', '2215', '2302', '2315', '2410', '2420', '3220', 
@@ -190,7 +199,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               '7234','7242','7244','7246','7248','7256','7260','7262','7264','7266','7268','7270','7362','7368','7372'];
               for (var z = 0; z < roomWithSofa.length; z++) {
                 if (roomWithSofa[z] === num) {
-                  sofa = roomWithSofa[z];
+                  //sofa = roomWithSofa[z];
                   $("#sofa").prop("checked", true);
                 }
               }
@@ -304,7 +313,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 $('#sofa').val(roomWithSofa(rNum));
                 $("#balcony").val(balconySuite(rNum));
                 $("#patio").val(patioSuite(rNum));
-                // separate bedroom
+                $("#separate").val(separateSuite(rNum));
                 // accessible
                 $('#room_bath').val(bath);
                 $('#room_view').val(view);
