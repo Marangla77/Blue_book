@@ -2,93 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Arizona Biltmore Blue Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="book_style.css">
     <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 </head>
-<body >
-   <div class="container">
-     <dix id="inner-container">
-       <!-- <div id="image">
-         <img src="Resource/AZ_logo.jpg" alt="Biltmore block">
-       </div> -->
-       <div id="baner">
-         <h1 id="header-title">Room features</h1>
-             <div id="header">
-              <input type="text" id="room" value="type Room number">
-             <button id="our-button">Enter</button>
-             </div>
-        </div>
-     </dix>
-       <div class="main-container">
-           <form>
-               <ul id="main-form">
-                   <li>
-                      <label>Building</label>
-                      <input type="text" id="wing"  disabled>
-                   </li>
-                   <li>
-                       <label>Cathegory</label>
-                       <input type="text" id="room_style"  disabled>
-                   </li>
-                   <li>
-                       <label>Bed Type</label>
-                       <input type="text" id="room_bed"  disabled>
-                   </li>
-                    <li> <label>Bathroom</label>
-                         <input type="text" id="room_bath"  disabled>
-                    </li>
-                    <li><label>Room Size</label>
-                        <input type="text" id="room_size"  disabled></li>
-                    <li><label>Connector</label>
-                        <input type="text" id="room_connect"  disabled></li>
-                    <li><label>Room View</label>
-                            <textarea id="room_view"  disabled></textarea></li>
-               </ul>
-               <ul id="sidebar">
-                 <li>
-                    <input type="checkbox" id="access" disabled>
-                    <label for="access">Accessible</label>
-                </li>
-                <li>
-                    <input type="checkbox" id="separate" disabled>
-                    <label for="separate">Separate Bedroomy</label>
-                 </li>
-                   <li>
-                      <input type="checkbox" id="rollaway" disabled>
-                      <label for="rollaway">Allow Rollaway</label>
-                   </li>
-                   <li><input type="checkbox" id="sofa" disabled>
-                       <label for="sofa">Sleeper Sofa</label>
-                    </li>
-                   <li>
-                    <input type="checkbox" id="patio" disabled>
-                    <label for="patio">Patio</label>
-                    </li>
-                  <li>
-                      <input type="checkbox" id="balcony" disabled>
-                      <label for="balcony">balcony</label>
-                  </li>
-                   <li>
-                      <input type="checkbox" id="fire" disabled>
-                      <label for="fire">Fire pit</label>
-                  </li>
-               </ul>
-           </form>
-           
-           <img id="image">
-       </div> <!-- end main-container -->
-       <footer><p>&copy; <span id='year'></span> Martyna Rangl.</p><footer>
-   </div>
-
-   <!-- <script>
-   window.$ = window.jQuery = require('./js/jquery-3.2.1.min.js');
-   </script> -->
-   <script src="book1.js"></script>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="Resource/icon_trans.png" alt=""></div>
+            <h1>AZB Room Features</h1>
+            <div class="search">
+                <input id="room" type="text" value="Type room number">
+                <button id="our-button">Search</button>
+            </div>
+        </div><!--end of header-->
+        <div class="main">
+                <form>
+                        <ul id="main-form">
+                            <li>
+                               <label>Building</label>
+                               <input type="text" id="wing"  disabled>
+                            </li>
+                            <li>
+                                <label>Cathegory</label>
+                                <input type="text" id="room_style"  disabled>
+                            </li>
+                            <li>
+                                <label>Bed Type</label>
+                                <input type="text" id="room_bed"  disabled>
+                            </li>
+                             <li> <label>Bathroom</label>
+                                  <input type="text" id="room_bath"  disabled>
+                             </li>
+                             <li><label>Room Size</label>
+                                 <input type="text" id="room_size"  disabled></li>
+                             <li><label>Connector</label>
+                                 <input type="text" id="room_connect"  disabled></li>
+                             <li><label for="room_view">View</label>
+                                     <textarea id="room_view"  disabled></textarea></li>
+                        </ul>
+                        <ul id="sidebar">
+                          <li>
+                             <input type="checkbox" id="access" disabled>
+                             <label for="access">Accessible</label>
+                         </li>
+                         <li>
+                             <input type="checkbox" id="separate" disabled>
+                             <label for="separate">Separate Bedroomy</label>
+                          </li>
+                            <li>
+                               <input type="checkbox" id="rollaway" disabled>
+                               <label for="rollaway">Allow Rollaway</label>
+                            </li>
+                            <li><input type="checkbox" id="sofa" disabled>
+                                <label for="sofa">Sleeper Sofa</label>
+                             </li>
+                            <li>
+                             <input type="checkbox" id="patio" disabled>
+                             <label for="patio">Patio</label>
+                             </li>
+                           <li>
+                               <input type="checkbox" id="balcony" disabled>
+                               <label for="balcony">balcony</label>
+                           </li>
+                            <li>
+                               <input type="checkbox" id="fire" disabled>
+                               <label for="fire">Fire pit</label>
+                           </li>
+                           <li>
+                                <input type="checkbox" id="extra" disabled>
+                                <label for="extra">Gas Fireplace &#38; Kitchen</label>
+                            </li>
+                        </ul>
+                    </form>
+        </div><!--end of main-->
+<footer><p>Copyright &copy; <span id='year'></span> Martyna Rangl. All rights reserved.</p><footer>
+</div><!--end of container-->
+    <script src="book1.js"></script>
 </body>
 </html>
