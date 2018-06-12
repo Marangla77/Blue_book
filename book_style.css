@@ -75,6 +75,8 @@ border-radius:10px 0 0 10px;;
   cursor:pointer;
   background-color: #3dccc7;
   color:#fff;
+  font-size: 80%;
+  font-weight:bold;
 }
 
 .search button:hover, .search button:active{
@@ -118,13 +120,13 @@ form {
 }
 
 #main-form {
-  flex-basis: 45%;
+  flex-basis: 58%;
   display:flex;
   flex-direction: column;
 }
 
 #sidebar {
-  flex-basis: 23%;
+  flex-basis: 27%;
 }
 
 #main-form li {
@@ -195,6 +197,7 @@ border-radius: 10px;
 footer {
    position:fixed;
    bottom: 0;
+   background-image: url("Resource/header_photo.png");
 }
 footer p, footer span{
   color: #3dccc7;
