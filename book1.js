@@ -185,6 +185,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                   $("label[for='patio']").text("Shared patio");
                 }else{
                   style ="Ocatilla CLub";
+                  $("#balcony").prop("checked", true);
                   $("label[for='balcony']").text("\'French\' balcony");
                 }
               }
@@ -270,6 +271,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               $("label[for='access']").text("Wheelchair accessible");
               if(type === "K1ERD"){
                 $("#fire").prop("checked", true);
+                $("label[for='access']").text("Hearing & weelchair accessible");
                 $("label[for='fire']").text("Visual Strobe");
               }
               if(num.substring(1,2) === "1"){
