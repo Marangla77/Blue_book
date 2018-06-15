@@ -294,6 +294,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
             }
           }
             $('#our-button').click(function() {
+            
               var roomNumber = $('#room').val();
               var rNum;
               var wing;
