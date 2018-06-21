@@ -326,6 +326,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                     connect = item[5].trim();
                   }
                 }
+                $("#main-form label").css({"color" : "#0b6fd3"});
                 $('#wing').val(whichBuilding(wing));
                 $('#room_style').val(roomType + " - " + bedInRoom(roomType, rNum) + " " + roomStyle(roomType, rNum));
                 $('#sofa').val(roomWithSofa(rNum,roomType));
@@ -355,6 +356,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 $("label[for='access']").text("Accessible");
                 $("label[for='fire']").text("Fire Pit");
                 $("#room_bath").css({"font-weight": "500"});
+                $("#main-form label").css({"color" : "#9b9292"});
                 $("label[for='rollaway']").text("Allow Rollaway");
               }
             });
