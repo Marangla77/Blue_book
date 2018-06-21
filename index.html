@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="book_style.css">
+    <link rel="stylesheet" href="new_style.css">
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -15,39 +15,73 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo"><img src="Resource/icon_trans.png" alt=""></div>
+            <!-- <div class="logo"><img src="Resource/icon_trans_w.png" alt=""></div> -->
             <h1>AZB Room Features</h1>
             <div class="search">
-                <input id="room" type="text" value="Enter room#" required>
-                <button id="our-button">Search</button>
+                <input id="room" type="text" value="Enter Room#" required>
+                <button id="our-button"> Search</button>
             </div>
         </div><!--end of header-->
         <div class="main">
+
                 <form>
-                        <ul id="main-form">
-                            <li>
-                               <label>Building</label>
+                        <fieldset class="selectOptions">
+                            
+                                <legend>Step 1:<br> Select</legend>
+                                <div><input type="checkbox" name="chooseBed" id="choice1" value="single">
+                                    <label for="choices">King</label></div>
+                                <div><input type="checkbox" name="chooseBed" id="choice2" value="twoQueens">
+                                    <label for="choices">Two Queens</label></div>
+                                <div><input type="checkbox" name="chooseBed" id="choice2" value="twoQueens">
+                                    <label for="choices">One Queen</label></div>
+                                <div><input type="checkbox" name="chooseView" id="choice1" value="single">
+                                    <label for="choices">Pool</label></div>
+                                <div><input type="checkbox" name="chooseView" id="choice2" value="twoQueens">
+                                    <label for="choices">Mountain</label></div>
+                                <div><input type="checkbox" name="chooseView" id="choice2" value="twoQueens">
+                                    <label for="choices">Garden</label></div>
+                                <div><input type="checkbox" name="extraChoice" id="choice1" value="single">
+                                    <label for="choices">Sleeper Sofa</label></div>
+                                <div><input type="checkbox" name="extraChoice" id="choice2" value="twoQueens">
+                                    <label for="choices">Separate Bedroom</label></div>
+                                <div class="select-btn">
+                                    <button>Select</button>
+                                </div>
+                        </fieldset>
+                            <fieldset id="choice">
+                                    <legend>Step 2: <br> Choose</legend>
+                                    <select id="choice_selection" size="10">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                    </select>
+                        </fieldset>
+                        
+                        <fieldset id="main-form">
+                            <legend>Step 3:<br>Find Out</legend>
+                           
+                            <div class="field">
+                               <label>Building:</label>
                                <input type="text" id="wing"  disabled>
-                            </li>
-                            <li>
-                                <label>Cathegory</label>
+                            </div>
+                            <div class="field">
+                                <label>Cathegory:</label>
                                 <input type="text" id="room_style"  disabled>
-                            </li>
-                            <li>
-                                <label>Bed Type</label>
-                                <input type="text" id="room_bed"  disabled>
-                            </li>
-                             <li> <label>Bathroom</label>
+                            </div>
+                             <div class="field"> <label>Bathroom:</label>
                                   <input type="text" id="room_bath"  disabled>
-                             </li>
-                             <li><label>Room Size</label>
-                                 <input type="text" id="room_size"  disabled></li>
-                             <li><label>Connector</label>
-                                 <input type="text" id="room_connect"  disabled></li>
-                             <li><label for="room_view">View</label>
-                                     <textarea id="room_view"  disabled></textarea></li>
-                        </ul>
-                        <ul id="sidebar">
+                             </div>
+                             <div class="field"><label>Room Size:</label>
+                                 <input type="text" id="room_size"  disabled></div>
+                             <div class="field"><label>Connector:</label>
+                                 <input type="text" id="room_connect"  disabled></div>
+                             <div class="field"><label for="room_view">View:</label>
+                                     <textarea id="room_view"  disabled></textarea></div>
+ 
+                        </fieldset>
+                        <fieldset id="sidebar">
+                            <legend>Step 4:<br>Features</legend>
+                            <ul>
                           <li>
                              <input type="checkbox" id="access" disabled>
                              <label for="access">Accessible</label>
@@ -69,11 +103,11 @@
                              </li>
                            <li>
                                <input type="checkbox" id="balcony" disabled>
-                               <label for="balcony">balcony</label>
+                               <label for="balcony">Balcony</label>
                            </li>
                             <li>
                                <input type="checkbox" id="fire" disabled>
-                               <label for="fire">Fire pit</label>
+                               <label for="fire">Fire Pit</label>
                            </li>
                            <li>
                                 <input type="checkbox" id="extra" disabled>
@@ -84,6 +118,7 @@
                                 <label for="bar">Wet Bar</label>
                             </li>
                         </ul>
+                        </fieldset>
                     </form>
         </div><!--end of main-->
 <footer>

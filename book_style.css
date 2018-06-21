@@ -1,22 +1,27 @@
+:root {
+  --fontSize: 14px;
+  --light_background:#f2f2f2;
+  --border-color:#c0c2c4;
+}
 * {
-  width:100%;
   padding:0;
   margin:0;
-  /* color:#a0a2a4; */
   color:#333;
   font-family:Arial, Helvetica, sans-serif;
   outline:none;
   box-sizing: border-box;
   text-transform:uppercase;
+  font-size: var(--fontSize);
 }
 body {
   background-color:#e9e7e7;
 }
-
+.container {
+  width:100%;
+}
 .header{
   /* background-color:#255084; */
   background-image: url("Resource/header_photo.png");
-  /* background:rgba(0,0,0,0.8); */
   height:70px;
   display:flex;
   padding: 0 50px;
@@ -58,7 +63,6 @@ height:40px;
 color:rgba(42, 43, 42,0.6);
 text-align:center; 
 border-radius:10px 0 0 10px;
-font-size: 90%;
 }
 .search button {
   width: 32%;
@@ -67,7 +71,6 @@ font-size: 90%;
   cursor:pointer;
   background-color: #00b0ff;
   color:#fff;
-  font-size: 85%;
   font-weight:bold;
 }
 
@@ -79,7 +82,7 @@ font-size: 90%;
 
 .main {
   background-color:#dcddde;
-  padding:20px 0;
+  padding:10px 0;
 }
 /*----- from original file ------*/
 ul {
@@ -87,30 +90,48 @@ ul {
 }
 
 ul li {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 input, textarea {
-  background-color: #fff;
   color:#2A2b2a;
   font-weight: 500;
-  border-radius:0 10px 10px 0;;
-  border:none;
+  border-radius:0 10px 10px 0;
 }
 
 form {
   display: flex;
   justify-content:center;
+  flex-wrap: wrap;
 }
-#main-form , #sidebar {
+/* Option box style */
+.selectOptions {
+  display:flex;
+}
+.selectOptions div{
+  padding:10px;
+}
+.selectOptions fieldset{
+  flex-basis: 20%;
+  margin: 0 20px;
+}
+.selectOptions fieldset legend {
+  margin:0 10px;
+  padding:0 5px;
+  text-align: center;
+}
+/* end of option box style */
+#main-form , #sidebar, #choice , .selectOptions, #choice_selection{
   padding: 10px 20px;
-  border:1px solid #c0c2c4;
   border-radius:10px;
   margin: 0 10px;
-  box-shadow: 0 10px 20px #c4c4c5;
-  background-color:#f2f2f2;
 }
-
+.selectOptions{
+  flex-basis: 100%;
+}
+#choice {
+  flex-basis: 15%;
+}
 #main-form {
   flex-basis: 58%;
   display:flex;
@@ -118,7 +139,7 @@ form {
 }
 
 #sidebar {
-  flex-basis: 27%;
+  flex-basis: 20%;
 }
 
 #main-form li {
@@ -130,28 +151,24 @@ form {
   width: 130px;
   min-width:130px;
   color:#333;
-  background-color: #c0c2c4;
+  background-color: var(--border-color);
   border-radius: 10px 0 0 10px;
   text-align: center;
 }
 
-#main-form li input, #main-form li textarea {
+#main-form li input, #main-form textarea {
   flex-basis: 80%;
-  font-size: 15px;
-  text-align: center;
+  text-align: left;
   color:#000;
-  border:1px solid #c0c2c4;
-  background-color: #f2f2f2;
+  border:1px solid var(--border-color);;
+  background-color: var( --light_background);
 }
 
 #main-form li label, #main-form li input, #main-form li textarea {
-  padding: 10px 20px 10px 10px;
+  padding: 5px 10px 5px 5px;
 }
 #main-form li #room_view {
-    height: 70px;
-    text-align: center;
-    padding:5px;
-    
+    height: 60px;
 }
 #main-form label[for=room_view]{
   line-height: 50px;
@@ -165,7 +182,7 @@ form {
 #sidebar li {
   display:flex;
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 0;
   margin: 4px 0;
   width:auto;
 }
@@ -177,30 +194,30 @@ form {
 flex-basis: 100%;
 padding: 4px;
 color:#333;
-border:1px solid #c0c2c4;
+border:1px solid var(--border-color);
 border-radius: 10px;
 }
 #sidebar li input[type="checkbox"]:checked + label{
   color:#fff;
   font-weight: 600;
   background-color:#00b0ff;
-  box-shadow: 3px 3px 3px #c0c2c4;
+  box-shadow: 3px 3px 3px var(--border-color);;
 }
 footer {
-   position:fixed;
-   bottom: 0;
-   height:70px;
-   background-image: url("Resource/header_photo.png");
-   background-repeat: no-repeat;
+  position:fixed;
+  bottom: 0;
+  width:100%;
+  height:70px;
+  background-image: url("Resource/header_photo.png");
+  background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
 }
 footer p, footer span{
   color: #00b0ff;
+  font-size: 12px;
 }
 footer p {
-  font-size: 12px;
-  text-transform: capitalize;
   text-align: center;
   padding:20px;
 }

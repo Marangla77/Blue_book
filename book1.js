@@ -4,13 +4,12 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
   $(document).ready(function() {
         
         //function that tells where is the room - which building
-        var $label;
         var whichBuilding = function(num) {
           if (num.substring(0, 1) === "1") {
             if ((num >= "1130" && num < "1140") || (num >= "1230" &&
                 num < "1240") || num === "1241" || num === "1243") {
               num = "East Wing";
-              $("label[for='patio']").text("Stairs - no elevator");
+              $("label[for='patio']").text("Stairs - No Elevator");
             } else if ((num >= "1140" && num < "1160") || (num >= "1240" && num < "1260" && num !== "1241" && num !== "1243")) {
 
               if(num === "1154"){
@@ -70,11 +69,11 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
             var elevatorAccess = function(num){
               if(num.substring(0,2) === "72" && parseInt(num) < 7262){
                 $("#patio").prop("checked",true);
-                $("label[for='patio']").text("Stairs - no elevator");
+                $("label[for='patio']").text("Stairs - No Elevator");
               }
               else if((num.substring(0,2) === "72" || num.substring(0,2) === "73") && parseInt(num) >= 7262 ){
                 $("#patio").prop("checked",true);
-                $("label[for='patio']").text("elevator");
+                $("label[for='patio']").text("Elevator");
               }
             }
             //function for suite with balcony
@@ -90,7 +89,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                         $("label[for='balcony']").text("\'French\' balcony"); 
                   }
                   else {
-                    $("label[for='balcony']").text("Private balcony");  
+                    $("label[for='balcony']").text("Private Balcony");  
                   }
                  }
                 }//end of for loop
@@ -103,7 +102,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 if (parseInt(num) === suiteWithPatio[i]) {
                    $("#patio").prop("checked", true);
                    if(num.substring(0,1) === "6"){
-                    $("label[for='patio']").text("Shared patio"); 
+                    $("label[for='patio']").text("Shared Patio"); 
                  }
                 }
               }//end of for loop
@@ -132,7 +131,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 } else {
                   $("#balcony").prop("checked", true);
                   if(num.substring(0,1) === "2" || num.substring(0,1) === "3" ){
-                    $("label[for='balcony']").text("Shared balcony");
+                    $("label[for='balcony']").text("Shared Balcony");
                   }
                   style = "Premier";
                 }
@@ -140,7 +139,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 style = "Premier Poolside";
                 $("#patio").prop("checked", true);
               } else if (style === "K1SGO" || style === "Q2SGO") {
-                style = "Premier with Fire pit";
+                style = "Premier with Fire Pit";
                 $("#fire").prop("checked", true);
                 $("#patio").prop("checked", true);
                 smallRoom(num);
@@ -154,14 +153,14 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               } else if (style === "K1CGO" || style === "Q2CGO" || style === "Q1CGO") {
                 $("#fire").prop("checked", true);
                 $("#patio").prop("checked", true);
-                style = "Cottage with patio";
+                style = "Cottage with Patio";
               } else if (style === "K1QRO" || style === "Q2QRO") {
                 $("#patio").prop("checked", true);
                 style = "Ocatilla Club DeLux";
-                $("label[for='patio']").text("Shared patio");
+                $("label[for='patio']").text("Shared Patio");
               } else if (style === "K1QR" || style === "Q2QR") {
                 $("#balcony").prop("checked", true);
-                $("label[for='balcony']").text("\'French\' balcony");
+                $("label[for='balcony']").text("\'French\' Balcony");
                 style = "Ocatilla Club";
               } else if (style === "K1J" || style === "Q2J") {
                 style = "Biltmore Suite";
@@ -169,6 +168,9 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 style = "Grand Suite";
               } else if (style === "K1ZRP1") {
                 style = "Signature / Presidential Suite";
+                if(num === "4300"){
+                  $("#bar").prop("checked",true);
+                }
               } else if (style === "K1VRP1" || style === "Q2VRP1") {
                 style = "One Bedroom Villa Suite";
                 $("#separate").prop("checked", true);
@@ -182,23 +184,23 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 if(num.substring(0,2) === "61"){
                   style = "Ocatilla Club Delux";
                   $("#patio").prop("checked", true);
-                  $("label[for='patio']").text("Shared patio");
+                  $("label[for='patio']").text("Shared Patio");
                 }else{
                   style ="Ocatilla CLub";
                   $("#balcony").prop("checked", true);
-                  $("label[for='balcony']").text("\'French\' balcony");
+                  $("label[for='balcony']").text("\'French\' Balcony");
                 }
               }
               else{
                 style = "Classic";
                 if(parseInt(num) === 1130 || parseInt(num) === 1136 || parseInt(num) === 1138 ){
                   $("#patio").prop("checked", true);
-                  $("label[for='patio']").text("Shared patio");
+                  $("label[for='patio']").text("Shared Patio");
                 }
                 for(var g=0; g< classicWithBalcony.length;g++){
                   if(parseInt(num)=== classicWithBalcony[g]){
                     $("#balcony").prop("checked", true);
-                    $("label[for='balcony']").text("Shared balcony");
+                    $("label[for='balcony']").text("Shared Balcony");
                   }
                 }
               }
@@ -225,8 +227,8 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               for (var z = 0; z < roomWithSofa.length; z++) {
                 if (roomWithSofa[z] === num) {
                   $("#sofa").prop("checked", true);
-                  $("#rollaway").prop("checked", false);
-                  $("label[for='rollaway']").text("Rollaway not allowed");
+                  $("#rollaway").prop("checked", true);
+                  $("label[for='rollaway']").text("Rollaway Not Allowed");
                 }
               }
             }
@@ -237,14 +239,14 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                 bedStyle = "King";
                 $("#rollaway").prop("checked", true);
                 if(num.substring(0,2) === "52" || num.substring(0,2) === "72"){
-                  $("#rollaway").prop("checked",false);
-                  $("label[for='rollaway']").text("Rollaway not allowed");
+                  $("#rollaway").prop("checked",true);
+                  $("label[for='rollaway']").text("Rollaway Not Allowed");
               }
             }
               else if (bedStyle.substring(0, 2) === "Q2") {
                 bedStyle = "Double Queen";
-                $("#rollaway").prop("checked",false);
-                $("label[for='rollaway']").text("Rollaway not allowed");
+                $("#rollaway").prop("checked",true);
+                $("label[for='rollaway']").text("Rollaway Not Allowed");
               }
               else {
                 bedStyle = "Single Queen";
@@ -255,7 +257,7 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
             //function for connecting room
             var connectRoom = function(num) {
               if (num === "N") {
-                num = "none";
+                num = "None";
               } else {
                 num = num;
               }
@@ -267,11 +269,12 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
             for(var i = 0; i< wheelchairRoom.length; i++){
               
               if(type === wheelchairRoom[i] || num === "6104"){
-                $("#room_bath").css({"color":"#071088","font-weight": "600"});
-              $("label[for='access']").text("Wheelchair accessible");
+                $("#access").prop("checked", true);
+                $("#room_bath").css({"font-weight": "600"});
+                $("label[for='access']").text("Wheelchair accessible");
               if(type === "K1ERD"){
                 $("#fire").prop("checked", true);
-                $("label[for='access']").text("Hearing & weelchair accessible");
+                $("label[for='access']").text("Hearing & Weelchair accessible");
                 $("label[for='fire']").text("Visual Strobe");
               }
               if(num.substring(1,2) === "1"){
@@ -284,11 +287,10 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               
             }
           }
-
             if(type === "K1ERV" || num === "2105"){
-              $("#room_bath").css({"color":"#071088","font-weight": "600"});
+              $("#room_bath").css({"font-weight": "600"});
               $("#access").prop("checked", true);
-              $("label[for='access']").text("Hearing accessible");
+              $("label[for='access']").text("Hearing Accessible");
               $("#fire").prop("checked", true);
               $("label[for='fire']").text("Visual Strobe");
             }
@@ -325,18 +327,16 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
                   }
                 }
                 $('#wing').val(whichBuilding(wing));
-                $('#room_style').val(roomType + " - " + roomStyle(roomType, rNum));
-                $('#room_bed').val(bedInRoom(roomType, rNum));
+                $('#room_style').val(roomType + " - " + bedInRoom(roomType, rNum) + " " + roomStyle(roomType, rNum));
                 $('#sofa').val(roomWithSofa(rNum,roomType));
                 $("#balcony").val(balconySuite(rNum));
                 $("#patio").val(patioSuite(rNum));
                 $("#separate").val(separateSuite(rNum));
-                // accessible
                 $('#room_bath').val(bath);
                 $('#room_view').val(view);
                 $('#room_size').val(size + " sqft");
                 $('#room_connect').val(connectRoom(connect));
-                accessibleRoom(roomType, rNum);
+                accessibleRoom(roomType,rNum);
                 elevatorAccess(rNum);
               });
             });
@@ -350,11 +350,11 @@ document.getElementById('year').innerHTML = myTime.getFullYear();
               if (this.value != "") {
                 $('input[type = text], textarea').val("");
                 $('input[type = checkbox]').prop('checked', false);
-                $("label[for='balcony']").text("balcony");
-                $("label[for='patio']").text("patio");
+                $("label[for='balcony']").text("Balcony");
+                $("label[for='patio']").text("Patio");
                 $("label[for='access']").text("Accessible");
-                $("label[for='fire']").text("Fire pit");
-                $("#room_bath").css({"color":"#000","font-weight": "500"});
+                $("label[for='fire']").text("Fire Pit");
+                $("#room_bath").css({"font-weight": "500"});
                 $("label[for='rollaway']").text("Allow Rollaway");
               }
             });
